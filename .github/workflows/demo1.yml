@@ -8,6 +8,7 @@ on:
       - opened
       # - edited
     branches:  # PULL REQUEST TARGETING THIS BRANCHES
+      - main
       - master
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
@@ -15,6 +16,7 @@ on:
   # EVENTS FILTER
   push:
     branches:
+      - main
       - master
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
