@@ -21,10 +21,10 @@ on:
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
       # developer-1   <-- for such case scenarios it will not be triggered
-    # paths-ignore:  # IGNORE CHANGES IF THESE FILES ARE CHANGED
-    #   - '.github/workflows/*'
-    paths:  # trigger atleast one file change
+    paths-ignore:  # IGNORE CHANGES IF THESE FILES ARE CHANGED
       - '.github/workflows/*'
+    # paths:  # trigger atleast one file change
+    #   - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
