@@ -8,18 +8,18 @@ on:
       - opened
       # - edited
     branches:  # PULL REQUEST TARGETING THIS BRANCHES
-      - main
+      - master
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
   workflow_dispatch:
   # EVENTS FILTER
   push:
     branches:
-      - main
+      - master
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
       # developer-1   <-- for such case scenarios it will not be triggered
-    paths-ignore::  # IGNORE CHANGES IF THESE FILES ARE CHANGED
+    paths-ignore:  # IGNORE CHANGES IF THESE FILES ARE CHANGED
       - '.github/workflows/*'
     # paths:  # trigger atleast one file change
     #   - '.github/workflows/*'
