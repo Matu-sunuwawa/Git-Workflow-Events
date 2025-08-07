@@ -8,14 +8,14 @@ on:
       - opened
       # - edited
     branches:  # PULL REQUEST TARGETING THIS BRANCHES
-      - master
+      - main
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
   workflow_dispatch:
   # EVENTS FILTER
   push:
     branches:
-      - master
+      - main
       - 'dev-*' # dev-new dev-this-is-new
       - 'feature/**'  # feature/new feature/new/button
       # developer-1   <-- for such case scenarios it will not be triggered
