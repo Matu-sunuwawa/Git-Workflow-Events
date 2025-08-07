@@ -2,12 +2,27 @@ name: Events Demo 1
 # on: [push, workflow_dispatch] # this actually applied on all branches
 on:
   pull_request:
-    # ACTIVITY TYPES
+    # EVENTS ACTIVITY TYPES
     # types: [opened, edited]
     types:
       - opened
-      - edited
+      # - edited
+    branches:  # PULL REQUEST TARGETING THIS BRANCHES
+      - master
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feature/**'  # feature/new feature/new/button
   workflow_dispatch:
+  # EVENTS FILTER
+  push:
+    branches:
+      - master
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feature/**'  # feature/new feature/new/button
+      # developer-1   <-- for such case scenarios it will not be triggered
+    # paths-ignore:  # IGNORE CHANGES IF THESE FILES ARE CHANGED
+    #   - '.github/workflows/*'
+    paths:  # trigger atleast one file change
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
